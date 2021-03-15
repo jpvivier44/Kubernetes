@@ -9,4 +9,10 @@
 
 ## Test kubectl :
 ```kubectl version --client```
+
 ```kubectl get nodes```
+
+```kubectl get nodes -o wide```
+
+> describe (analyse, description, inscpection d'une ressource)
+```kubectl describe node minikube```
