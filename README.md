@@ -43,3 +43,7 @@
 > Suppression POD
 
 ```kubectl delete pod nginx```
+
+> Création d'un Pod depuis un fichier de spec :
+
+```kubectl apply -f pod_nginx.yml```
