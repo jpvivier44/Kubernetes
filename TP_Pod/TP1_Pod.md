@@ -117,3 +117,9 @@ Le Pod peut etre supprimé avec la commande suivante:
 ```
 $ kubectl delete po/whoami
 ```
+
+ou
+
+```
+kubectl delete -f TP1_Pod/whoami.yaml
+```
