@@ -39,3 +39,7 @@
 > Test création Pods :
 
 ```kubectl run nginx --image nginx:1.18-alpine```
+
+> Suppression POD
+
+```kubectl delete pod nginx```
