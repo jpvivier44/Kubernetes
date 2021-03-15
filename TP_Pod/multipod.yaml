@@ -9,3 +9,5 @@ spec:
     - name: debian
       image: debian:buster-slim
       command: ["sleep", "600"]
+    - name: nginx2
+      image: nginx:1.18-alpine

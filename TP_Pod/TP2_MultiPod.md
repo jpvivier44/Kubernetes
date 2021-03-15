@@ -91,7 +91,7 @@ $ kubectl describe pod multipod
 
 Connexion dans le conteneur debian du pod multipod :
 ```
-$ kubectl 
+$ kubectl exec -it multipod -c debian  -- bash
 ```
 
 Depuis un second terminal, vérifiez que l'application est accessible sur localhost depuis le port 80:
