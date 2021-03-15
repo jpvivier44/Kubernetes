@@ -15,4 +15,14 @@
 ```kubectl get nodes -o wide```
 
 > describe (analyse, description, inscpection d'une ressource)
+
 ```kubectl describe node minikube```
+
+> Listin des resources k8s
+
+```kubectl api-resources```
+
+> Bash completion
+
+```$ sudo apt install bash-completion```
+```$ source <(kubectl completion bash)```
