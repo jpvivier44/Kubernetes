@@ -18,11 +18,24 @@
 
 ```kubectl describe node minikube```
 
-> Listin des resources k8s
+> Listing des resources k8s
 
 ```kubectl api-resources```
+
+> Explication des resources :
+
+```kubectl explain pods```
 
 > Bash completion
 
 ```$ sudo apt install bash-completion```
 ```$ source <(kubectl completion bash)```
+
+
+> Interrogation des composants système K8S via le namespace kube-system
+
+```kubectl get pods --namespace kube-system```
+
+> Test création Pods :
+
+```kubectl run nginx --image nginx:1.18-alpine```
