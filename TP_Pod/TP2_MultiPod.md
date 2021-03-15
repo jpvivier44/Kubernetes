@@ -30,6 +30,10 @@ Observez les détails du Pod à l'aide de *kubectl* et retrouvez l'information d
 ### 5. Se connecter dans le conteneur debian du pod multipod 
 
 Avec la commande *kubectl exec -it * se connecter dans le conteneur debian
+Installer le package curl
+
+```apt update && apt install curl```
+
 Tester une requete curl vers le service pod_ngin ```curl http://localhost:80```
 
 ### 6. Suppression du Pod
@@ -41,17 +45,20 @@ Supprimez le Pod.
 
 ### 1. Création de la spécification
 
-La spécification, définie dans le fichier *whoami.yaml*, est la suivante:
+La spécification, définie dans le fichier *multipod.yaml*, est la suivante:
 
 ```
-apiVersion: v1             
-kind: Pod                  
+apiVersion: v1
+kind: Pod
 metadata:
-  name: whoami
+  name: multipod
 spec:
   containers:
-  - name: whoami
-    image: containous/whoami
+    - name: nginx
+      image: nginx:1.18-alpine
+    - name: debian
+      image: debian:buster-slim
+      command: ["sleep", "600"]
 ```
 
 ### 2. Lancement du Pod
@@ -59,7 +66,7 @@ spec:
 Le Pod peut être créé avec la commande suivante:
 
 ```
-$ kubectl apply -f whoami.yaml
+$ kubectl apply -f multipod.yaml
 ```
 
 ### 3. Vérification
@@ -69,19 +76,7 @@ La commande suivante permet de lister les Pods présent:
 ```
 $ kubectl get pods
 NAME      READY     STATUS    RESTARTS   AGE
-whoami    1/1       Running   0          14s
-```
-
-Note: il est aussi possible de précisez *pod* (au singulier) ou simplement *po*
-
-```
-$ kubectl get pod
-NAME      READY     STATUS    RESTARTS   AGE
-whoami    1/1       Running   0          16s
-
-$ kubectl get po
-NAME      READY     STATUS    RESTARTS   AGE
-whoami    1/1       Running   0          22s
+multipod   2/2     Running   0          2m36s
 ```
 
 ### 4. Details du Pod
@@ -89,29 +84,20 @@ whoami    1/1       Running   0          22s
 Les details d'un Pod peuvent être obtenus avec la commande suivante:
 
 ```
-$ kubectl describe pod whoami
+$ kubectl describe pod multipod
 ```
 
-### 5. Accès à l'application via un port-forward
+### 5.  Se connecter dans le conteneur debian du pod multipod 
 
-Depuis un premier terminal lancez la commande suivante:
+Connexion dans le conteneur debian du pod multipod :
+```
+$ kubectl 
+```
+
+Depuis un second terminal, vérifiez que l'application est accessible sur localhost depuis le port 80:
 
 ```
-$ kubectl port-forward whoami 8888:80
-```
-
-Depuis un second terminal, vérifiez que l'application est accessible sur localhost depuis le port 8888:
-
-```
-$ curl localhost:8888
-Hostname: whoami
-IP: 127.0.0.1
-IP: 10.244.1.4
-RemoteAddr: 127.0.0.1:51562
-GET / HTTP/1.1
-Host: localhost:8888
-User-Agent: curl/7.64.1
-Accept: */*
+$ curl localhost:80
 ```
 
 
@@ -120,7 +106,7 @@ Accept: */*
 Le Pod peut etre supprimé avec la commande suivante:
 
 ```
-$ kubectl delete po/whoami
+$ kubectl delete po/multipod
 ```
 
 ou
