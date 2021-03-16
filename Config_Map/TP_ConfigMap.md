@@ -81,6 +81,10 @@ Après avoir copié cette configuration dans un fichier *nginx.conf*, lancez la 
 kubectl create configmap proxy-config --from-file=./nginx.conf
 ```
 
+> On peut générer le fichier de spec associé via le --dry-run et output yaml
+
+```kubectl create configmap proxy-config --from-file=./nginx.conf --dry-run=client -o yaml > cm-proxy.yaml```
+
 ## 4. Spécification du reverse-proxy
 
 La spécification suivante définie un Pod, contenant un unique container basé sur l'image *nginx*, ainsi qu'un service de type *NodePort* dont le rôle est d'exposer ce Pod à l'extérieur du cluster. C'est à ce service que l'on enverra une requête HTTP dans la suite.
