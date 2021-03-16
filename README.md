@@ -76,3 +76,19 @@ https://kubernetes.io/fr/docs/tasks/access-application-cluster/web-ui-dashboard/
 ```kubectl apply -f recommended.yaml```
 
 ```kubectl get pod,svc,deploy -n kubernetes-dashboard```
+
+```kubectl proxy```
+
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.
+
+
+## Purge des ressources
+
+> Complète :
+```kubectl delete all --all```
+
+> Affinage sur namespace :
+```kubectl delete all --all -n developpement```
+
+> Affinage sur label :
+```kubectl delete all --all -l app=dev```
