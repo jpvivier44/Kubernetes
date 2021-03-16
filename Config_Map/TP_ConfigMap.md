@@ -101,7 +101,7 @@ metadata:
 spec:
   containers:
   - name: proxy
-    image: nginx:1.14-alpine
+    image: nginx:1.18-alpine
     volumeMounts:
     - name: config
       mountPath: "/etc/nginx/"
