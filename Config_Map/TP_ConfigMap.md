@@ -10,7 +10,6 @@ Nous allons configurer ce proxy de façon à ce que les requètes reçues sur le
 
 La spécification suivante définie un Pod, contenant un unique container basé sur l'image *containous/whoami*, ainsi qu'un service de type *ClusterIP* dont le rôle est d'exposer ce Pod à l'intérieur du cluster.
 
-
 ```
 apiVersion: v1
 kind: Pod
@@ -76,7 +75,7 @@ http {
 }
 ```
 
-Après avoir copié cette configuration dans un fichier *nginx.conf*, lancez la commande suivante pour créer la configMap *proxy-config*:
+Après avoir copié cette configuration dans un fichier *nginx.conf*, lancez la commande suivante pour créer la configMap *proxy-config*: (utilisation commande impérative)
 
 ```
 kubectl create configmap proxy-config --from-file=./nginx.conf
