@@ -36,7 +36,7 @@ A l'aide de *kubectl* créez le Service défini dans *www_service_NodePort.yaml*
 
 Lancez un navigateur sur le port 31000 de l'une des machines du cluster.
 
-Note: vous pouvez obtenir les adresses IP externes des nodes de votre cluster dans la colonne *EXTERNAL-IP* du résultat de la commande suivante:
+Note: vous pouvez obtenir les adresses IP des nodes de votre cluster dans la colonne *EXTERNAL-IP* du résultat de la commande suivante:
 ```
 $ kubectl get nodes -o wide
 ```
