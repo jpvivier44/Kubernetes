@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-configmap
+spec:
+  containers:
+    - name: test
+      image: alpine:3.9
+      command:
+        - "sleep"
+        - "10000"
+      env:
+        - name: NOM
+          valueFrom:
+            configMapKeyRef:
+              name: demo-configmap
+              key: nom
