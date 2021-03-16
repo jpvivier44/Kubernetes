@@ -60,6 +60,6 @@ service/www-np created
 Les ressources peuvent être supprimées avec les commandes suivantes:
 
 ```
-$ kubectl delete po/whoami
-$ kubectl delete svc/whoami-np
+$ kubectl delete po/www
+$ kubectl delete svc/www-np
 ```
