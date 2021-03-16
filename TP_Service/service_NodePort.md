@@ -18,7 +18,7 @@ La commande suivante permet de créer le Pod
 $ kubectl apply -f www_pod.yaml
 ```
 
-### 3. Définition d'un service de type ClusterIP
+### 3. Définition d'un service de type NodePort
 
 Créez un fichier *www_service_NodePort.yaml* définissant un service ayant les caractéristiques suivantes:
 - nom: *www-np*
