@@ -97,4 +97,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-```
+
+## 5. Suppression des ressources
+
+Supprimer les ressources crées
