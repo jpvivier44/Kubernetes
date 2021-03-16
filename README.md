@@ -63,3 +63,16 @@ https://kubernetes.io/docs/tasks/manage-kubernetes-objects/imperative-command/
 ```kubectl run nginx --image nginx:1.18-alpine --dry-run=client -o yaml > pod_nginx_imperativ.yaml```
 
 ```kubectl create service clusterip my-svc --clusterip="None" -o yaml --dry-run=client > srv.yaml```
+
+
+
+## K8s Dashboard
+https://kubernetes.io/fr/docs/tasks/access-application-cluster/web-ui-dashboard/
+
+> Dans un répertoire dashboard :
+
+```wget https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended.yaml```
+
+```kubectl apply -f recommended.yaml```
+
+```kubectl get pod,svc,deploy -n kubernetes-dashboard```
