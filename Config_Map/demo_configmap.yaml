@@ -4,6 +4,3 @@ metadata:
   name: demo-configmap
 data:
   nom: Pierre
-  clef: |
-    status.key=formateur
-    formation.key=k8s

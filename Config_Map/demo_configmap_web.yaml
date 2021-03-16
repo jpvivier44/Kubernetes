@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-configmap-web
+data:
+  code: |
+    Bonjour
+    Formation K8s
+    Ajout code
+    Ajout2
