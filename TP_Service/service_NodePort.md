@@ -1,6 +1,6 @@
 ## Exercice
 
-Dans cet exercice, vous allez créer un Pod et l'exposer à l'intérieur du cluster en utilisant un Service de type *NodePort*.
+Dans cet exercice, vous allez créer un Pod et l'exposer à l'extérieur du cluster en utilisant un Service de type *NodePort*.
 
 ### 1. Création d'un Pod
 
