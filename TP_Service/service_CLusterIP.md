@@ -72,11 +72,17 @@ curl http://backend/index.php
 
 Ceci montre que depuis le cluster, si l'on accède au Service *backend* la requête est bien envoyée à l'un des Pods (nous en avons créé un seul ici) regroupé par le Service (via la clé *selector*).
 
-### 6. Visualisation de la ressource
+### 6. Utilisation ClusterIP + port-forward => accès extérieur temporaire
+
+Accèder au service backend depuis l'extérieur temporairement à l'aide de port-forward :
+
+```kubectl port-forward svc/backend 8245:80```
+
+### 7. Visualisation de la ressource
 
 A l'aide de `kubectl get`, visualisez la spécification du service *backend*.
 
-### 7. Détails du service
+### 8. Détails du service
 
 A l'aide de *kubectl describe*, listez les détails du service *backend*
 
@@ -84,6 +90,6 @@ Notez l'existence d'une entrée dans *Endpoints*, celle-ci correspond à l'IP du
 
 Note: si plusieurs Pods avaient le label *app: backend*, il y aurait une entrée Endpoint pour chacun d'entre eux.
 
-### 8. Cleanup
+### 9. Cleanup
 
 Supprimez l'ensemble des ressources créés dans cet exercice
