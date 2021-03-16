@@ -150,7 +150,7 @@ service/whoami          ClusterIP   10.11.243.238   <none>        80/TCP        
 Depuis l'IP d'une des machines du cluster, nous pouvons alors envoyer une requête GET sur le endpoint */whoami* et voir que celle-ci est bien traitée par l'application *whoami*, elle renvoie *poddy*, le nom du Pod.
 
 ```
-$ curl HOST_IP:31600/whoami
+$ curl http://{NODE_IP}:31600/whoami
 ```
 
 ## En résumé
