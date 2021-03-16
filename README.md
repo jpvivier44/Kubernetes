@@ -47,3 +47,19 @@
 > Création d'un Pod depuis un fichier de spec :
 
 ```kubectl apply -f pod_nginx.yml```
+
+> Suppression d'un Pod :
+
+```kubectl delete pod nginx```
+
+
+
+## Approche imérative
+
+https://kubernetes.io/docs/tasks/manage-kubernetes-objects/imperative-command/
+
+> Sauvegarder la commande impérative dans un fichier de spec yaml
+
+```kubectl run nginx --image nginx:1.18-alpine --dry-run=client -o yaml > pod_nginx_imperativ.yaml```
+
+```kubectl create service clusterip my-svc --clusterip="None" -o yaml --dry-run=client > srv.yaml```
