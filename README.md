@@ -92,3 +92,23 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 
 > Affinage sur label :
 ```kubectl delete all --all -l app=dev```
+
+
+## Secret
+
+- Méthode de création via fichier de spec :
+
+```
+kubectl apply -f resource_secret.yaml
+secret/demo-secret created
+kubectl get secret
+kubectl describe secrets demo-secret 
+```
+
+- Méthode de création impérative :
+https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/
+
+```
+kubectl create secret generic imperative-secret --from-literal='username=my-app'
+secret/imperative-secret created
+```
