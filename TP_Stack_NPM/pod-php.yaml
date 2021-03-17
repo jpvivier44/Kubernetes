@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: php
+  labels:
+    app: php
+    projet: npm
+spec:
+  volumes:
+  - name: php-volume
+    emptyDir: {}
+  initContainers:
+  - name: side-car
+    image: busybox
+    volumeMounts:
+    - name: php-volume
+      mountPath: /php_code
+    command:
+    - wget
+    - "-O"
+    - "/php_code/index.php"
+    - https://raw.githubusercontent.com/psable/php/main/index.php
+
+  containers:
+  - name: php
+    image: bilbloke/php-fpm-mysql:1.0
+    volumeMounts:
+    - name: php-volume
+      mountPath: /srv/http
+
