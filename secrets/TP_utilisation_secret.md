@@ -23,6 +23,8 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: demo-secret
+  labels:
+    app: tp_secret
 type: Opaque
 data:
   db_root_password: cm9vdHRvb3I=
@@ -100,4 +102,6 @@ MariaDB [(none)]>
 
 ## 5. Suppression des ressources
 
-Supprimer les ressources crées
+Supprimer les ressources crées:
+
+```kubectl delete pod,secret -l app=tp_secret```
