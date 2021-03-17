@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: mariadb-cm
   labels:
+    app: mariadb
     projet: npm
 data:
   MYSQL_DATABASE: formation
