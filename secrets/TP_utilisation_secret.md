@@ -105,3 +105,13 @@ MariaDB [(none)]>
 Supprimer les ressources crées:
 
 ```kubectl delete pod,secret -l app=tp_secret```
+
+
+## 6. apply et delete sur un répertoire de specs
+
+> On peut préciser un répertoire à la commande apply pour créer l'ensemble des ressources yaml présentes dans ce répertoire
+
+```
+$ kubectl apply -f spec
+$ kubectl delete -f spec
+```
