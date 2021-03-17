@@ -49,3 +49,27 @@ $ kubectl get pod,secret,svc,cm -l app=mariadb
 - 2. php
   
 ```
+$ kubectl apply -f pod-php.yaml
+
+$ kubectl apply -f svc-php.yaml
+
+$ kubectl get pod,svc -l app=php
+```
+
+- 3. nginx
+
+```
+$ kubectl apply -f cm-nginx.yaml
+
+$ kubectl apply -f pod-nginx.yaml
+
+$ kubectl apply -f svc-nginx.yaml
+
+$ kubectl get pod,svc,cm -l app=php
+```
+
+- 4. ALL
+
+```
+$ kubectl get all -l projet=npm
+```
