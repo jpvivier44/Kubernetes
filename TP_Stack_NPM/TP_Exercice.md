@@ -23,3 +23,29 @@
 ## Network
 
 > https://kubernetes.io/fr/docs/concepts/services-networking/service/
+
+## Containers : init, side-car, satellite
+
+> https://kubernetes.io/fr/docs/concepts/workloads/pods/init-containers/
+
+> https://kubernetes.io/fr/docs/concepts/cluster-administration/logging/
+
+## Commandes déploiement
+
+- 1. Mariadb
+
+```
+$ kubectl apply -f cm-mariadb.yaml
+
+$ kubectl apply -f sct-mariadb.yaml
+
+$ kubectl apply -f pod-mariadb.yaml
+
+$ kubectl apply -f svc-mariadb.yaml
+
+$ kubectl get pod,secret,svc,cm -l app=mariadb
+```
+
+- 2. php
+  
+```

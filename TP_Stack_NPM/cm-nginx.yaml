@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: nginx-cm
   labels:
+    app: nginx
     projet: npm
 data:
   config: |
