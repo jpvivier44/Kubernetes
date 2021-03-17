@@ -10,13 +10,13 @@ Dans cet exercice vous allez créer un pod qui utilise une ressource de type *se
 - Encoder le mode de passe prévu :
 
 ```
-echo -n "roottoor" | base64
+$ echo -n "roottoor" | base64
 cm9vdHRvb3I=
 ```
 
 ## 1. Création d'une ressource de type *Secret*
 
-Créer un fichier de specification *pod_mysql_secret.yaml* pour créer la ressource *secret* en intégrant le mot de passe encodé avec le contenu ci-dessous :
+Créer un fichier de specification *mysql_secret.yaml* pour créer la ressource *secret* en intégrant le mot de passe encodé avec le contenu ci-dessous :
 
 ```
 apiVersion: v1
@@ -33,7 +33,7 @@ data:
 La commande suivante permet de créer le secret
 
 ```
-$ kubectl apply -f resource_secret.yaml
+$ kubectl apply -f mysql_secret.yaml
 ```
 
 ## 2. Spécification du pod utilisant une ressource *secret*
