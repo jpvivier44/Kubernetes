@@ -16,7 +16,7 @@ cm9vdHRvb3I=
 
 ## 1. Création d'une ressource de type *Secret*
 
-Créer un fichier de specification *pod_mysql_secret.yaml* pour créer la ressource *secret* en intégrant le mot de passe encodé avec le contenu ci-dessous :
+Créer un fichier de specification *mysql_secret.yaml* pour créer la ressource *secret* en intégrant le mot de passe encodé avec le contenu ci-dessous :
 
 ```
 apiVersion: v1
