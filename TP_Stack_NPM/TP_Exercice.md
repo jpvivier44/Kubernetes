@@ -100,3 +100,9 @@ $ kubectl logs pod/nginx
 $ kubectl exec pod/php -c php -- ls -l /srv/http
 $ kubectl exec -it pod/nginx -- bash
 ```
+
+- 6 : Infos nodes du cluster
+  
+```
+$ kubectl get nodes -o wide
+```
