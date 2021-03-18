@@ -25,11 +25,7 @@ Listez les mises à jour (= révisions) du Deployment.
 
 ## 4. Effectuez un rollback
 
-Faites un rollback et vérifier que le Deployment est maintenant basé sur la version précédente de l'image (nginx:1.16)
-
-## 5. Cleanup
-
-Supprimez les Deployments
+Faites un rollback et vérifier que le Deployment est maintenant basé sur la version précédente de l'image (bilbloke/frontend:1.0)
 
 
 # Correction
@@ -77,6 +73,3 @@ Faites un rollback et vérifier que le Deployment est maintenant basé sur la ve
 ```
 kubectl rollout undo deployment frontend
 ```
-
-## 8. Cleanup
-Supprimez les deployments
