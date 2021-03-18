@@ -14,9 +14,11 @@ spec:
     metadata:
       labels:
         app: frontend
+      annotations:
+        kubernetes.io/change-cause: "Mise à jour couleur code php avec image version bilbloke"
     spec:
       containers:
       - name: frontend
-        image: bilbloke/frontend:1.0
+        image: bilbloke/frontend:2.0
         ports:
         - containerPort: 80
