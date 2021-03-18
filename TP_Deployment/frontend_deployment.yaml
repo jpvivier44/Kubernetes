@@ -6,17 +6,24 @@ metadata:
     projet: tp_deploy
     type: deploy-frontend
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: frontend
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1   # Nbre de pod supplémentaire autorisés dans le deployment
+      maxUnavailable: 0 # Nbre de pod down/détruit autorisé
   template:
     metadata:
       labels:
         app: frontend
+      annotations:
+        kubernetes.io/change-cause: "Mise à jour couleur code php avec image version bilbloke/frontend:2.0"
     spec:
       containers:
       - name: frontend
-        image: bilbloke/frontend:1.0
+        image: bilbloke/frontend:2.0
         ports:
         - containerPort: 80
