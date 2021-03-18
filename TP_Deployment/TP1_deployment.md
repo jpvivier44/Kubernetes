@@ -45,6 +45,20 @@ Conseils:
 
 Note: n'hésitez pas à vous reporter à l'exercice sur les Services de type NodePort que nous avons vu précédemment
 
+> Pb Cluster K8S via minikube :
+> Les PODS n'ont config DNS correcte une fois le cluster généré par minikue. ON détruit le pod codeDNS pour qu'il soit regénéré automatiquement
+> Les pod systems sont dans le namespace *kube-system*
+
+```
+$ kubectl get pods -n kube-system
+```
+
+> Recherche le pod commencant par *coredns* et le détruire
+
+```
+$ kubectl delete -n kube-system pod coredns-74ff55c5b-2wmqz
+```
+
 Une fois le service créé, vous pourrez accéder à l'interface de l'application *frontend* sur *http://IP_NODE:31111/index.php* ou IP est l'adresse IP d'une machine du cluster Kubernetes.
 
 Note: vous pouvez récupérer les IPs des machines de votre cluster avec la commande `$ kubectl get nodes -o wide`
