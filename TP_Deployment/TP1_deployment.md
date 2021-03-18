@@ -3,6 +3,8 @@
 Dans cet exercice, vous allez créer deux *Deployment*, un frontend exposé vers l'extérieur via un service *NodePort* et un backend exposé dans le cluster k8s via un service ClusterIP
 Le frontend sera en mesure de communiquer avec le backend via le service de type ClusterIP
 
+> https://kubernetes.io/fr/docs/concepts/workloads/controllers/deployment/
+
 ### 1. Spécification d'un Deployment frontend
 
 Créez un fichier *frontend_deployment.yaml* définissant un Deployment ayant les propriétés suivantes:
