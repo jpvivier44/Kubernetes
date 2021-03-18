@@ -88,4 +88,15 @@ $ kubectl get pod,svc,cm -l app=php
 
 ```
 $ kubectl get all -l projet=npm
+$ kubectl get po,secret,cm,svc -l projet=npm
+```
+
+
+- 5 : Debug
+
+```
+$ kubectl describe {ressource}
+$ kubectl logs pod/nginx
+$ kubectl exec pod/php -c php -- ls -l /srv/http
+$ kubectl exec -it pod/nginx -- bash
 ```
