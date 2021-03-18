@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mariadb
+  labels:
+    app: mariadb
+    projet: npm
+spec:
+  containers:
+  - name: bdd
+    image: mariadb:10.3
+    env:
+    - name: MYSQL_DATABASE
+      valueFrom:
+        configMapKeyRef:
+          name: mariadb-cm
+          key: MYSQL_DATABASE
+
+    - name: MYSQL_DB_USER
+      valueFrom:
+        configMapKeyRef:
+          name: mariadb-cm
+          key: MYSQL_DB_USER
+
+    - name: MYSQL_ROOT_PASSWORD
+      #value: kubernetes
+      valueFrom:
+        secretKeyRef:
+          name: mariadb-sct
+          key: mysql_root_password
+
+    - name: MYSQL_PASSWORD
+      #value: kubernetes
+      valueFrom:
+        secretKeyRef:
+          name: mariadb-sct
+          key: mysql_user_password         
+
+    volumeMounts:
+    - name: mariadb-volume
+      mountPath: /var/lib/mysql
+
+  volumes:
+  - name: mariadb-volume
+    hostPath:
+      path: /mariadb-data
+      type: DirectoryOrCreate
