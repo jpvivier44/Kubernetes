@@ -72,7 +72,7 @@ A partir du TP_Service : POD backend *backend_php_pod.yaml*, convertir ce backen
 - labels:
   - projet: tp_deploy
 - nombre de replicas: 2
-- définition d'un selector sur le label *app: fronbackendtend*
+- définition d'un selector sur le label *app: backend*
 - spécification du Pod:
   * label *app: backend*
   * un container nommé *backend* basé sur l'image *bilbloke/backend:1.0* et exposant le port *80*
