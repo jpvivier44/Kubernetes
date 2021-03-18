@@ -45,7 +45,7 @@ Conseils:
 
 Note: n'hésitez pas à vous reporter à l'exercice sur les Services de type NodePort que nous avons vu précédemment
 
-Une fois le service créé, vous pourrez accéder à l'interface de l'application *frontend* sur *http://IP:31001/index.php* ou IP est l'adresse IP d'une machine du cluster Kubernetes.
+Une fois le service créé, vous pourrez accéder à l'interface de l'application *frontend* sur *http://IP_NODE:31111/index.php* ou IP est l'adresse IP d'une machine du cluster Kubernetes.
 
 Note: vous pouvez récupérer les IPs des machines de votre cluster avec la commande `$ kubectl get nodes -o wide`
 
